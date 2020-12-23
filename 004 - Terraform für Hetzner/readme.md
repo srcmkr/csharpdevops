@@ -1,7 +1,8 @@
 ## Anforderung 1: Projekt und API-Schlüssel
 Ein bestehendes Projekt bei Hetzner Cloud, sowie ein gültiger API-Schlüssel für dieses.  
 Der API-Schlüssel muss in die Zeile 3 der .tf-Datei.  
-Aus ```default = "######TOKEN_HIER_EINFÜGEN########"``` wird dann z.B. ```default = "abc123abc123"```   
+Aus ```default = "######TOKEN_HIER_EINFÜGEN########"``` wird dann z.B. ```default = "abc123abc123"```  
+Der Inhalt der Datei "test.rsa.pub" muss mit dem Public Key aus dem SSH-Keypair ausgetauscht werden. Alternativ kann die Zeile 30 der 001-kubernetes-cluster.tf angepasst werden (z.B. auf ~/ssh/id_rsa.pub)  
 
 ## Anforderung 2: Terraform
 Terraform kann hier heruntergeladen werden: https://www.terraform.io/downloads.html  
