@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  name: default-backend
+  namespace: kube-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: default-backend
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: default-backend
+    spec:
+      containers:
+      - image: srcmkr/csharpdevopsdemo
+        name: simple-webapp
+        env:
+        - name: COLOR
+          value: "#243554"
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: default-http-backend
+  namespace: kube-system
+spec:
+  ports:
+  - nodePort: 31984
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: default-backend
+  type: NodePort

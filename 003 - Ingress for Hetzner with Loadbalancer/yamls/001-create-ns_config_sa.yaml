@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ingress-space
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configuration
+  namespace: ingress-space
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name:  ingress-serviceaccount
+  namespace: ingress-space
