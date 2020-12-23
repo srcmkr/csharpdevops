@@ -4,7 +4,8 @@ kubectl apply -f yamls/001-create-ns_config_sa.yaml
 ```
 
 ### Ingress Controller aktivieren
-**WICHTIG:** Zeile 171 anpassen (auf deine Domain)  
+**WICHTIG:** Zeile 171 anpassen (auf deine primäre Domain)  
+Die Angabe hat keine Auswirkung auf die weiteren Deployments - du kannst in den Schritten 4 und 5 trotzdem jede (Sub-) Domain nutzen, die gerade zur Verfügung steht.  
 ```
 kubectl apply -f yamls/002-create-ingress-controller-change_line-171.yaml
 ```
