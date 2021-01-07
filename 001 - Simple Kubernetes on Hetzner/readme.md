@@ -56,3 +56,10 @@ cp /etc/kubernetes/admin.conf .kube/config
 ```
 
 Viel Spaß!
+
+
+Für einen Single-Node-Cluster möchtest du vielleicht Deployments auf der selben Node ausführen wie der Cluster.  
+Um dies zu erlauben, musst du ein "Taint" (= "Abstoßung") löschen:  
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
