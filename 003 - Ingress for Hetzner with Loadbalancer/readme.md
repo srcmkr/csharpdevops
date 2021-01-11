@@ -10,7 +10,7 @@ Die Angabe hat keine Auswirkung auf die weiteren Deployments - du kannst in den 
 kubectl apply -f yamls/002-create-ingress-controller-change_line-171.yaml
 ```
 
-### Backend-Service (=Default-Seite bei Fehler 404)
+### Default-Service (=Seite bei z.B. Fehler 404)
 ```
 kubectl apply -f yamls/003-create-backend-service.yaml
 ```

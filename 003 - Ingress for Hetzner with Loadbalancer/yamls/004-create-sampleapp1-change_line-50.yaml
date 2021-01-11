@@ -5,7 +5,7 @@ metadata:
   labels:
     app: csharpdevops1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: csharpdevops1
@@ -47,10 +47,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: demo1.d3v.to
+  - host: d3v.to
     http:
       paths:
-      - path: /
+      - path: /servicea
         backend:
           serviceName: csharpdevops1-service
           servicePort: 80
