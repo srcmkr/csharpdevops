@@ -40,7 +40,7 @@ apt update && apt install -y kubeadm=1.18.5-00 kubelet=1.18.5-00 kubectl=1.18.5-
 ```
 kubeadm init --apiserver-advertise-address=<public-IP> --pod-network-cidr=<private-network>  --ignore-preflight-errors=all
 ```
-7. Auf dem Master das Calico-Netzwerk installieren:
+7. Auf dem Master das Calico-Netzwerk installieren (für spätere Versionen siehe Schritt X):
 ```
 kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
 ```
@@ -53,6 +53,11 @@ kubeadm token create --print-join-command
 ```
 cd ~
 cp /etc/kubernetes/admin.conf .kube/config
+```
+
+X. Sofern Kubernetes in der neusten Version installiert wird, Schritt 7 überspringen und nach Schritt 10 folgendes ausführen
+```
+kubectl create -f https://projectcalico.docs.tigera.io/manifests/tigera-operator.yaml
 ```
 
 Viel Spaß!
